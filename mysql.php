@@ -58,7 +58,7 @@ echo "here it is: \n";
 
 echo "\n--------------------\n";
 for ($i=0; $i<10; $i++) {
-    print_r($data[i]);
+    print_r($data[$i]);
     echo "\n--------------------\n";
 }
 
