@@ -11,6 +11,33 @@ for ($i=0; $i<count($items); $i++) {
 
     $log = explode("\n", $items[$i]);
     print_r($log);
+
+    $logItem = [
+        "sql"=>""
+    ];
+    for ($j=0; $j<count($log); $j++) {
+        $logText = trim(str_replace("# ", $log[$j]));
+        switch ($i) {
+            case 0:
+                $logItem["time"] = $logText;
+                break;
+            case 3:
+                $logItem["query"] = $logText;
+                break;
+            case 1:
+            case 2:
+            case 4:
+            case 5:
+
+                break;
+            default:
+                $logItem["sql"] .= $logText."\n";
+            break;
+        }
+    }
+
+    print_r($logItem);
+
     exit;
 }
 
