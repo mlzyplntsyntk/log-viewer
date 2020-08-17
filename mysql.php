@@ -5,6 +5,8 @@ $contents = file_get_contents($fileName);
 $items = explode("# Time:", $contents);
 
 echo count($items);
+$data = [];
+
 for ($i=0; $i<count($items); $i++) {
     //ignore first item
     if ($i == 0) continue;
@@ -37,10 +39,11 @@ for ($i=0; $i<count($items); $i++) {
         }
     }
 
-    print_r($logItem);
+    $data[] = $logItem;
 
-    exit;
 }
+
+echo "total logs: ".count($data);
 
 echo "\n--------------------\n";
 echo $items[0];
