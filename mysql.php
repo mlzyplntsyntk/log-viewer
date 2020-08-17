@@ -22,6 +22,7 @@ for ($i=0; $i<count($items); $i++) {
                 $logItem["time"] = $logText;
                 break;
             case 3:
+                $logQuery = floatval(str_replace("Query_time: ", "", explode("  ", $logText)[0]));
                 $logItem["query"] = $logText;
                 break;
             case 1:
