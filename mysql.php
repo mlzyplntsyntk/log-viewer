@@ -1,6 +1,11 @@
 <?php
 $fileName = $argv[1];
+
+echo "reading file contents";
+
 $contents = file_get_contents($fileName);
+
+echo "file contents are read and being parsed\n";
 
 $items = explode("# Time:", $contents);
 
@@ -38,18 +43,23 @@ for ($i=0; $i<count($items); $i++) {
     }
 
     $data[] = $logItem;
-
 }
+
+echo "sorting array by query_time\n";
+
+// sort by query time
 
 $query = array_column($data, 'query');
 array_multisort($query, SORT_DESC, $data);
-print_r($data[0]);
-exit;
+
+echo "here it is: \n";
+
+// list 10 of the queries.
 
 echo "\n--------------------\n";
-echo "total logs: ".count($data);
-echo "\n--------------------\n";
-print_r($data[0]);
-echo "\n--------------------\n";
-print_r($data[10]);
-echo "\n--------------------\n";
+for ($i=0; $i<10; $i++) {
+    print_r($data[i]);
+    echo "\n--------------------\n";
+}
+
+//c'mon ! no need to exit
