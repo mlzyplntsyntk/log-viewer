@@ -41,9 +41,10 @@ for ($i=0; $i<count($items); $i++) {
 
 }
 
+echo "\n--------------------\n";
 echo "total logs: ".count($data);
 echo "\n--------------------\n";
-echo $items[0];
+echo $data[0];
 echo "\n--------------------\n";
-echo $items[1];
+echo $data[10];
 echo "\n--------------------\n";
