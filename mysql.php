@@ -16,7 +16,7 @@ for ($i=0; $i<count($items); $i++) {
         "sql"=>""
     ];
     for ($j=0; $j<count($log); $j++) {
-        $logText = trim(str_replace("# ", $log[$j]));
+        $logText = trim(str_replace("# ", "", $log[$j]));
         switch ($i) {
             case 0:
                 $logItem["time"] = $logText;
