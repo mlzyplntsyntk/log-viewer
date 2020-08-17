@@ -41,6 +41,11 @@ for ($i=0; $i<count($items); $i++) {
 
 }
 
+$query = array_column($data, 'query');
+array_multisort($price, SORT_DESC, $data);
+print_r($data[0]);
+exit;
+
 echo "\n--------------------\n";
 echo "total logs: ".count($data);
 echo "\n--------------------\n";
