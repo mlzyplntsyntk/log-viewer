@@ -4,7 +4,6 @@ $contents = file_get_contents($fileName);
 
 $items = explode("# Time:", $contents);
 
-echo count($items);
 $data = [];
 
 for ($i=0; $i<count($items); $i++) {
@@ -12,7 +11,6 @@ for ($i=0; $i<count($items); $i++) {
     if ($i == 0) continue;
 
     $log = explode("\n", $items[$i]);
-    print_r($log);
 
     $logItem = [
         "sql"=>""
@@ -44,7 +42,6 @@ for ($i=0; $i<count($items); $i++) {
 }
 
 echo "total logs: ".count($data);
-
 echo "\n--------------------\n";
 echo $items[0];
 echo "\n--------------------\n";
